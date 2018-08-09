@@ -27,6 +27,7 @@ public class MemberJoinAction implements Action{
 		String id = null;
 		String password = null;
 		String username = null;
+		String roadFullAddr = null;
 		String email = null;
 		String salt = SHA256.generateSalt();
 		
@@ -41,6 +42,9 @@ public class MemberJoinAction implements Action{
 		if (request.getParameter("username") != null) {
 			username = request.getParameter("username");
 		}
+		if (request.getParameter("roadFullAddr") != null) {
+			roadFullAddr = request.getParameter("roadFullAddr");
+		}
 		if (request.getParameter("email") != null) {
 			email = request.getParameter("email");
 		}
@@ -48,6 +52,7 @@ public class MemberJoinAction implements Action{
 		member.setId(id);
 		member.setPassword(password);
 		member.setUsername(username);
+		member.setRoadFullAddr(roadFullAddr);
 		member.setEmail(email);
 		member.setSalt(salt);
 		
